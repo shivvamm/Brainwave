@@ -8,9 +8,9 @@ const router = express.Router()
 router.get('/all-users', getAllUsers);
 
 // GET USER || POST
-router.get('/register', registerController);
+router.post('/register', registerController);
 
 //LOGIN
-router.post('login', loginController);
+router.post('/login', loginController);
 
 module.exports = router
