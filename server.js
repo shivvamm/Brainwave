@@ -10,6 +10,9 @@ const connectDB = require("./config/db")
 //env cofig
 dotenv.config();
 
+//routes import
+const userRoutes = require('./routes/userRoutes')
+
 //mongodb connection
 connectDB(); 
 
@@ -22,11 +25,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 //routes
-app.get('/',(req,res) =>{
-    res.status(200).send({
-        "message":"Node server"
-    })
-})
+app.use('/api/v1/user',userRoutes);
 
 
 //POST
